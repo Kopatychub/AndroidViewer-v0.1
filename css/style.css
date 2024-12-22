@@ -8,11 +8,18 @@
     src: url(../src/Inter-Medium.ttf);
 }
 
-body, html {
+body,
+html {
     height: 100%;
     width: 100%;
     overflow: hidden;
     font-family: inter;
+    background-color: #1d1d1d;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 20px 1fr;
 }
 
 .frame_block {
@@ -28,11 +35,45 @@ body, html {
 
 .drag_space {
     -webkit-app-region: drag;
-    background-color: #e9e9e9;
+    background-color: #303030;
 }
+
 .minimize_btn {
     background-color: gray;
 }
+
 .close_btn {
     background-color: red;
+}
+
+
+/* =============== main window =================== */
+
+#main-window {
+    display: flex;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+}
+
+#xml-view {
+    background-color: #eee;
+    /* width: 80%; */
+    flex-grow: 1;
+    height: 100%;
+    min-width: 10px;    
+}
+
+#code-editor {
+    background-color: #dde;
+    width: 20%;
+    height: 100%;
+    min-width: 10px;
+}
+
+#resizer {
+    width: 5px;
+    background-color: #ccc;
+    cursor: ew-resize;
+    position: relative;
 }
